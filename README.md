@@ -16,14 +16,18 @@ The end result is nearly always a faster build and script execution time.
 
 ## Included Plugins:
 
-* Removes trailing commas from function calls (via [babel-plugin-syntax-trailing-function-commas](https://www.npmjs.com/package/babel-plugin-syntax-trailing-function-commas))
-* CommonJS import/export module syntax ([babel-plugin-transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs))
+* babel-plugin-transform-es2015-modules-commonjs
+* babel-plugin-transform-async-to-generator
+* babel-plugin-transform-class-properties
+* babel-plugin-transform-es2015-destructuring
+* babel-plugin-transform-es2015-parameters
+* babel-plugin-transform-object-rest-spread
 
 ## Installation
 
 Install via NPM the usual way:
 
-`npm i babel-preset-node6`
+`npm i babel-preset-nodejs6`
 
 ## Usage
 
@@ -34,7 +38,7 @@ Create a `.babelrc` file in your project root, and include 'node5' in your prese
 ```js
 {
   "presets": [
-    "node6"
+    "nodejs6"
   ]
 }
 ```
@@ -42,32 +46,7 @@ Create a `.babelrc` file in your project root, and include 'node5' in your prese
 Now whenever you run `babel-node`, it will polyfill your app with the remaining ES2015 features that Node 6 is missing.
 
 ### Via CLI
-`$ babel script.js --presets node6`
-
-### Via Node API
-
-If you don't want to use a project-wide `.babelrc` file (as above):
-
-```js
-require("babel-core").transform("code", {
-  presets: ["node6"]
-});
-```
-
-And if you _do_, and you want to use vanilla `node` instead of `babel-node` as your CLI, you can create an entry script that references your pre-transpiled code like so:
-
-```js
-require('babel-register');
-require('path/to/es6/script');
-```
-
-... which will then run everywhere Node can.
-
-Of course, make sure to `npm i -S babel-core` or `npm i -S babel-register` respectively, to grab the NPM packages you'll need to transpile on-the-fly.
-
-### Webpack, Gulp, Browserify, etc
-
-Follow vendor instructions and include `node6` in your babel "preset" list.
+`$ babel script.js --presets nodejs6`
 
 ## How to add React support
 
@@ -82,7 +61,7 @@ And then add it to your "presets" list in `.babelrc`:
 ```js
 {
   "presets": [
-    "node6",
+    "nodejs6",
     "react"
   ]
 }
@@ -90,4 +69,3 @@ And then add it to your "presets" list in `.babelrc`:
 
 ## Credits
 Forked and updated from [@leebenson](https://github.com/leebenson/)'s [node5 preset.](https://github.com/leebenson/babel-preset-node5)
-
