@@ -19,7 +19,6 @@ The end result is nearly always a faster build and script execution time.
 * babel-plugin-transform-es2015-modules-commonjs
 * babel-plugin-transform-async-to-generator
 * babel-plugin-transform-class-properties
-* babel-plugin-transform-es2015-destructuring
 * babel-plugin-transform-es2015-parameters
 * babel-plugin-transform-object-rest-spread
 
