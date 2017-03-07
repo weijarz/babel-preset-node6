@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-nodejs6",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Babel preset for Node 6.x (ES6 / ES2015)",
   "repository": "git://github.com/weijarz/babel-preset-nodejs6.git",
   "main": "index.js",
